@@ -1,111 +1,63 @@
-* {
-  box-sizing: border-box;
-  /* Apply box-sizing: border-box to all elements, including padding and border in the total width and height calculations */
-}
-
 input:focus {
   outline: none;
   border: 1px solid rgba(255, 0, 0, 0.8);
-  /* Remove the default outline on focus and add a red border with an opacity of 0.8 */
   box-shadow: 0 0 0 1px rgba(255, 198, 43, 0.5);
-  /* Add a yellow box shadow around the input field on focus */
 }
 
 body {
   background: linear-gradient(to right, rgb(235, 178, 23), rgb(165, 75, 0));
-  /* Set a linear gradient background from left to right with two colors */
   display: flex;
-  /* Use flexbox for layout */
   justify-content: center;
-  /* Center the content horizontally */
   align-items: center;
-  /* Center the content vertically */
   height: 100vh;
-  /* Set the height of the body to 100% of the viewport height */
   margin: 0;
-  /* Remove default margins */
   overflow: hidden;
-  /* Hide any content that overflows the body */
-  /* Added to hide horizontal scrollbars */
 }
 
-.search-container {
+.searchContainer {
   position: fixed;
-  /* Set the position of the search container to fixed */
   top: 50%;
-  /* Position the search container 50% from the top of the viewport */
   left: 50%;
-  /* Position the search container 50% from the left of the viewport */
   transform: translate(-50%, -50%);
-  /* Translate the search container to the center of the viewport using negative percentages */
   z-index: 999;
-  /* Set a high z-index value to ensure the search container appears above other elements */
-  /* Ensure the search bar appears above other elements */
 }
 
 input {
   border-radius: 1.5px;
-  /* Set the border radius of the input field to create rounded corners */
   background-color: rgba(255, 198, 43, 0.5);
-  /* Set the background color of the input field with an RGBA value */
   margin: 0 auto;
-  /* Center the input horizontally using auto margins */
   display: block;
-  /* Set the input to be a block-level element */
   border: none;
-  /* Remove the border of the input field */
   border-bottom: 1px solid red;
-  /* Add a 1px solid red bottom border to the input field */
   position: relative;
-  /* Set the position of the input field to relative */
   z-index: 1;
-  /* Set a z-index value to ensure the input appears above suggestions */
   font-size: 104%;
-  /* Increase the font size of the input field by 4% */
   padding: 8px 12px;
-  /* Set the padding of the input field to 8px top and bottom, and 12px left and right */
-  /* Increase padding by 4% */
 }
 
-.search-container .suggestions {
+.searchContainer .suggestions {
   background-color: rgba(255, 198, 43, 0.5);
-  /* Set the background color of the suggestions list with an RGBA value */
   position: absolute;
-  /* Set the position of the suggestions list to absolute */
   width: 100%;
-  /* Set the width of the suggestions list to 100% */
   z-index: 2;
-  /* Set a higher z-index value to ensure the suggestions list appears above other elements */
   border-radius: 4px;
-  /* Set the border radius of the suggestions list to create rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Add a box shadow to the suggestions list */
   display: block;
-  /* Set the display property of the suggestions list to block */
-  /* Updated to display the suggestions */
   font-size: 104%;
-  /* Increase the font size of the suggestions list by 4% */
 }
 
 ul {
   margin: 0;
-  /* Remove the default margin of the unordered list */
   padding: 0;
-  /* Remove the default padding of the unordered list */
   list-style-type: none;
-  /* Remove the bullet points from the unordered list */
 }
 
 ul li {
   padding: 8px;
-  /* Add padding of 8px to each list item */
   cursor: pointer;
-  /* Change the cursor to a pointer when hovering over a list item */
   font-size: 104%;
-  /* Increase the font size of the list item by 4% */
 }
 
 ul li:hover {
   background-color: rgb(194, 86, 18);
-  /* Change the background color of the list item to a specific RGB value when hovering */
 }

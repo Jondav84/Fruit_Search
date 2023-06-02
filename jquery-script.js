@@ -1,7 +1,6 @@
 /** @format */
 
 const fruit = [
-  // Fruit names..
   "Apple",
   "Apricot",
   "Avocado 🥑",
@@ -82,34 +81,30 @@ const fruit = [
   "Tamarind",
   "Yuzu",
 ];
-// function to return an array of fruits based on matching fruit list values
+
+// Search function
 function search(str) {
   return fruit.filter((item) => item.toLowerCase().includes(str.toLowerCase()));
 }
-
-//function to show the suggestions in a list below the input
+// Function to display the results of searching
 function showSuggestions(results) {
-  ///empties the list first
   $(".suggestions ul")
     .empty()
-    //to prevent the full list from showing up when there has been no entries but input has focus &&
-    //prevents the full list when the input filed has been deleted by the operator
     .css(
       "display",
       results.length > 0 && $("#fruit").val().trim() !== "" ? "block" : "none"
     );
-  //creates and appends the li's to the ul for each of the results
   results.forEach((val) => {
     $("<li>").text(val).appendTo($(".suggestions ul"));
   });
 }
 
-///event handler to run showsuggestions based on the results of the search function called on the text field of the input
+// Keyup function that calls two functions each time a new character is input
 $("#fruit").on("keyup", function () {
   showSuggestions(search($(this).val()));
 });
-/// event handler to fill the input value with any li that is clicked on
-/// then clears the ul
+
+// Sets the input field value to the value of the selected suggestion
 $(".suggestions ul").on("click", "li", function () {
   $("#fruit").val($(this).text());
   $(".suggestions ul").css("display", "none");
